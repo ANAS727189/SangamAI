@@ -1,0 +1,15 @@
+streamlit
+firebase-admin
+langchain
+langchain-community
+langchain-openai
+langchain-google-genai
+langchain-text-splitters
+langchain-experimental
+faiss-cpu
+pypdf
+youtube-transcript-api
+pandas
+matplotlib
+tabulate
+python-dotenv
