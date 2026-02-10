@@ -30,24 +30,24 @@ WisdomAI is a production-grade Retrieval-Augmented Generation (RAG) application 
 ## ✨ Features
 
 ### Core Capabilities
-- **Secure Authentication** — Firebase-backed user management with email/password authentication
-- **PDF Processing** — Upload and automatically index PDF documents for semantic search
-- **YouTube Analysis** — Paste any YouTube URL to extract transcript, index it, and chat about the video
-- **CSV Intelligence** — Upload CSV datasets and query them with natural language via a Pandas agent
-- **Conversational RAG** — Ask natural language questions about your content with context-aware responses
-- **Multi-Model Support** — Access GPT-4, Claude, Gemini, and Grok models through a unified interface
-- **Persistent Chat History** — Conversations survive page refreshes and are stored in Firestore
-- **Auto-Load Intelligence** — Vectorstores load automatically when switching between documents
-- **User Profiles** — Customizable display names and saved API keys per user
+- **Secure Authentication** - Firebase-backed user management with email/password authentication
+- **PDF Processing** - Upload and automatically index PDF documents for semantic search
+- **YouTube Analysis** - Paste any YouTube URL to extract transcript, index it, and chat about the video
+- **CSV Intelligence** - Upload CSV datasets and query them with natural language via a Pandas agent
+- **Conversational RAG** - Ask natural language questions about your content with context-aware responses
+- **Multi-Model Support** - Access GPT-4, Claude, Gemini, and Grok models through a unified interface
+- **Persistent Chat History** - Conversations survive page refreshes and are stored in Firestore
+- **Auto-Load Intelligence** - Vectorstores load automatically when switching between documents
+- **User Profiles** - Customizable display names and saved API keys per user
 
 ### Technical Highlights
-- **Multi-Modal Pipeline** — Unified RAG architecture handles PDFs, YouTube transcripts, and CSV datasets
-- **Semantic Chunking** — Intelligent text splitting preserving context across 1000-character segments
-- **Local Embeddings** — HuggingFace `all-MiniLM-L6-v2` runs locally (no API costs)
-- **FAISS Vector Store** — High-performance similarity search with Firestore persistence
-- **Pandas Agent** — Natural language querying of structured data via `langchain-experimental`
-- **Conversational Memory** — Windowed memory tracks last 8 exchanges for context retention
-- **Two-Stage Retrieval** — Condense-question chain + document QA chain for accurate responses
+- **Multi-Modal Pipeline** - Unified RAG architecture handles PDFs, YouTube transcripts, and CSV datasets
+- **Semantic Chunking** - Intelligent text splitting preserving context across 1000-character segments
+- **Local Embeddings** - HuggingFace `all-MiniLM-L6-v2` runs locally (no API costs)
+- **FAISS Vector Store** - High-performance similarity search with Firestore persistence
+- **Pandas Agent** - Natural language querying of structured data via `langchain-experimental`
+- **Conversational Memory** - Windowed memory tracks last 8 exchanges for context retention
+- **Two-Stage Retrieval** - Condense-question chain + document QA chain for accurate responses
 
 ---
 
@@ -58,26 +58,26 @@ WisdomAI implements a modular, production-ready RAG architecture:
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Streamlit Frontend                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │  Login View  │  │   Chat View  │  │ Profile View │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│                    📄 PDF │ 🎥 YouTube │ 📊 CSV                │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │  Login View  │  │   Chat View  │  │ Profile View │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│                    PDF │ YouTube │ CSV                          │
 └────────────┬────────────────────────────────────────────────────┘
              │
 ┌────────────┴────────────────────────────────────────────────────┐
 │                      Application Layer                          │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ │
-│  │  Auth   │ │   RAG   │ │ Agents  │ │ Memory  │ │ Chains  │ │
-│  │ Module  │ │ Module  │ │ Module  │ │ Module  │ │ Module  │ │
-│  └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ │
+│  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐    │
+│  │  Auth   │ │   RAG   │ │ Agents  │ │ Memory  │ │ Chains  │    │
+│  │ Module  │ │ Module  │ │ Module  │ │ Module  │ │ Module  │    │
+│  └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘    │
 └────────────┬────────────────────────────────────────────────────┘
              │
 ┌────────────┴────────────────────────────────────────────────────┐
 │                     Data & External Services                    │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │   Firestore  │  │  OpenRouter  │  │    FAISS     │         │
-│  │   (NoSQL)    │  │  (LLM API)   │  │  (VectorDB)  │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Firestore  │  │  OpenRouter  │  │    FAISS     │           │
+│  │   (NoSQL)    │  │  (LLM API)   │  │  (VectorDB)  │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -237,7 +237,7 @@ The app will open at `http://localhost:8501`
    - You'll be redirected to the chat interface
 
 3. **Configure API Key**
-   - Click "👤 Profile" in the sidebar
+   - Click "Profile" in the sidebar
    - Enter your OpenRouter API key
    - Click "Save Key"
 
@@ -245,8 +245,8 @@ The app will open at `http://localhost:8501`
 
 OmniMind supports three content types via tabs in the Upload panel:
 
-#### 📄 PDF Documents
-1. Open the **📄 PDF** tab
+#### PDF Documents
+1. Open the **PDF** tab
 2. Click "Choose a PDF" and select a file
 3. Click "Process & Save"
 4. Watch the animated pipeline:
@@ -263,8 +263,8 @@ OmniMind supports three content types via tabs in the Upload panel:
 3. Click "Process Video"
 4. The transcript is fetched, chunked, embedded, and stored — same RAG pipeline as PDFs
 
-#### 📊 CSV Datasets
-1. Open the **📊 CSV** tab
+#### CSV Datasets
+1. Open the **CSV** tab
 2. Upload a `.csv` file
 3. Click "Process CSV"
 4. The dataset is stored in Firestore and loaded as a Pandas DataFrame
@@ -272,7 +272,7 @@ OmniMind supports three content types via tabs in the Upload panel:
 
 ### Chatting with Content
 
-1. Switch to the **💬 Chat** tab
+1. Switch to the **Chat** tab
 2. Select content from the dropdown
 3. Vectorstore (PDF/YouTube) or DataFrame (CSV) loads automatically
 4. Start asking questions in natural language
@@ -282,7 +282,7 @@ OmniMind supports three content types via tabs in the Upload panel:
 
 ### Example Interactions
 
-**📄 PDF Chat:**
+**PDF Chat:**
 ```
 User: "What is the main topic of this document?"
 WisdomAI: Based on the content, this document focuses on...
@@ -291,7 +291,7 @@ User: "Can you elaborate on chapter 3?"
 WisdomAI: Chapter 3 discusses... [automatically understands context]
 ```
 
-**🎥 YouTube Chat:**
+**YouTube Chat:**
 ```
 User: "What is this video about?"
 WisdomAI: The video covers... [answers from transcript]
@@ -300,7 +300,7 @@ User: "What did the speaker say about AI?"
 WisdomAI: Around the middle of the video, the speaker mentions...
 ```
 
-**📊 CSV Chat:**
+**CSV Chat:**
 ```
 User: "What is the total revenue?"
 WisdomAI: The total revenue is $1,234,567.89
@@ -311,7 +311,7 @@ WisdomAI: March had the highest sales at $189,432
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 wisdomai/
@@ -355,7 +355,7 @@ wisdomai/
 
 ---
 
-## 🔍 How It Works
+## How It Works
 
 ### RAG Pipeline Deep Dive
 
@@ -497,7 +497,7 @@ save_chat_message(user_id, file_name, "assistant", response)
 
 ---
 
-## 🧠 Memory System
+## Memory System
 
 ### Architecture
 
@@ -564,7 +564,7 @@ Render in UI
 
 ---
 
-## 🗄 Data Schema
+## Data Schema
 
 ### Firestore Collections
 
@@ -620,7 +620,7 @@ st.session_state = {
 ---
 
 
-## 🔒 Security Considerations
+## Security Considerations
 
 ### Authentication
 - Passwords are **hashed by Firebase** (bcrypt with salt)
