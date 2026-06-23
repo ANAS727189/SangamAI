@@ -3,6 +3,7 @@ serviceAccount.json
 firebase.config
 *.pem
 *.key
+.env
 
 # ─── Python ─────────────────────────────────────────────────
 __pycache__/
