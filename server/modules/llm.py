@@ -5,7 +5,7 @@ def get_llm(
     api_key: str,
     model_name: str,
     temperature: float = 0,
-    max_tokens: int = 1024,
+    max_tokens: int = 256,
 ) -> ChatOpenAI:
     """Create a ChatOpenAI instance configured for OpenRouter."""
     return ChatOpenAI(
